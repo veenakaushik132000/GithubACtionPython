@@ -1,4 +1,4 @@
-name: Veena_WorkfLow
+name: MyWorkflow
 
 on:
   push:
@@ -7,24 +7,32 @@ on:
     branches: [ "master" ]
 
 
-
 jobs:
   job1:
     runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+      - run: python First.py
 
-     steps:
-       - uses: actions/checkout@v3
-       - uses: actions/setup-python@v4
-       with:
-         python-version: '3.10' 
-       - run: python UsePython.py
+      - name: This is Python File
+        run: Run Python File.
+
 
   job2:
-    runs-on: windows-latest
-   steps:
-     - uses: actions/checkout@v3
-     - uses: actions/setup-python@v4
-     with:
-       python-version: '3.10' 
-   - run: python UsePython.py
+      runs-on: windows-latest
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-python@v4
+          with:
+            python-version: '3.10' 
+        - run: python First.py
+
+        - name: This is Python File
+          run: Run Python File.
