@@ -11,16 +11,18 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      with:
-        python-version: '3.7' 
-    - run: python UsePython.py
+
+
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+    with:
+      python-version: '3.7' 
+  - run: python UsePython.py
 
   job2:
     runs-on: windows-latest
-    steps:
+  steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
     with:
